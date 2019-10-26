@@ -46,7 +46,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+     String newWord = base.replaceAll(remove , "");
+
+        return  newWord;
     }
 
     /**
@@ -58,8 +60,28 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
-    }
+        int counterOne = 0;
+        int counterTwo = 0;
+
+        char [] charArray = input.toCharArray();
+        char i = 'i';
+        char s = 's';
+        char n = 'n';
+        char o = 'o';
+        char t = 't';
+
+        for ( int count = 0; count < charArray.length - 1; count++){
+            if(charArray[count]== i && charArray[count + 1] ==s){
+                counterOne++;
+            }
+            if(charArray[count] == n && charArray[count + 1] == o && charArray[count + 2] == t){
+                counterTwo++;
+            }
+        }
+
+        
+        return counterOne == counterTwo;
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
